@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cvm"
+version = "0.1.0"
+authors = [
+    {name = "CVM Project", email = "cvm@example.com"}
+]
+description = "Cognitive Virtual Machine: A Post-Transformer AI Architecture"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["ai", "cognitive-architecture", "ast", "symbolic-ai", "reasoning"]
+dependencies = []
+
+[project.optional-dependencies]
+visual = ["numpy>=1.20.0", "pillow>=8.0.0"]
+games = ["numpy>=1.20.0"]
+dev = [
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+all = ["numpy>=1.20.0", "pillow>=8.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/cvm"
+Documentation = "https://cvm.readthedocs.io"
+Repository = "https://github.com/yourusername/cvm"
+"Bug Tracker" = "https://github.com/yourusername/cvm/issues"
+
+[project.scripts]
+cvm = "cvm.cli:main"
+
+[tool.setuptools]
+packages = ["cvm", "cvm.core", "cvm.games", "cvm.games.poker", "cvm.games.snake", "cvm.games.tictactoe"]
+
+[tool.setuptools.package-data]
+cvm = ["py.typed"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311"]
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=cvm --cov-report=html --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["cvm"]
+omit = ["tests/*", "examples/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]

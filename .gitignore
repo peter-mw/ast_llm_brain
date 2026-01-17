@@ -28,3 +28,4 @@ memory.pkl
 # Ignore OS files
 .DS_Store
 Thumbs.db
+/dist
