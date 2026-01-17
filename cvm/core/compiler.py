@@ -3,13 +3,28 @@ Natural Language Compiler - converts expressions to AST
 This is the input interface, replacing tokenization
 """
 from cvm.core.ast import Node
+from typing import Optional
 import re
 
 
-def parse(expr):
+class ParseError(Exception):
+    """Raised when parsing fails"""
+    pass
+
+
+def parse(expr: str) -> Node:
     """
-    Parse a mathematical expression into an AST
-    This is a simple recursive descent parser
+    Parse a mathematical expression into an AST.
+    This is a simple recursive descent parser.
+    
+    Args:
+        expr: Mathematical expression string (e.g., "2 + 3")
+        
+    Returns:
+        Root Node of the parsed AST
+        
+    Raises:
+        ParseError: If expression is malformed
     
     Future: expand to handle full natural language
     """

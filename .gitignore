@@ -14,8 +14,9 @@ ENV/
 *.swp
 *.swo
 
-# Ignore memory files
+# Ignore memory files (both old pickle and new JSON)
 memory.pkl
+memory.json
 *.pkl
 
 # Ignore generated images
@@ -29,3 +30,4 @@ memory.pkl
 .DS_Store
 Thumbs.db
 /dist
+/*.coverage

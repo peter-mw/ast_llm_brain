@@ -1,8 +1,53 @@
-# AST-Based Cognitive Virtual Machine (CVM)
+# Cognitive Virtual Machine (CVM)
 
 **A Post-Transformer Architecture for Deterministic, Verifiable AI**
 
+[![Tests](https://img.shields.io/badge/tests-31%20passed-brightgreen)](tests/)
+[![Coverage](https://img.shields.io/badge/coverage-25%25-yellow)](htmlcov/)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](pyproject.toml)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 This is not an LLM. This is a **thinking machine**.
+
+---
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+Or install from PyPI (when published):
+```bash
+pip install cvm
+```
+
+## Quick Start
+
+```python
+from cvm import CVM, parse
+
+# Create a cognitive virtual machine
+vm = CVM()
+
+# Think about a problem
+result = vm.think(parse("2 + 3"))
+print(result)  # 5
+```
+
+Run examples:
+```bash
+python examples/demo_phase1.py
+python examples/demo_poker_auto.py
+```
+
+CLI commands:
+```bash
+cvm version     # Show version
+cvm info        # Package information
+cvm migrate     # Migrate old pickle files to JSON
+cvm clear       # Clear memory storage
+```
 
 ---
 
@@ -41,22 +86,24 @@ text → AST → semantic graph → neural reasoning → executable proof → te
 The system evolves through 4 phases, each adding fundamental cognitive capabilities:
 
 ### Phase I: Basic Cognitive Loop
-**File:** `core/cvm_phase1.py`
+**Location:** `cvm/core/cvm_phase1.py`
 
 - ✅ Executable AST representation (Node-based graphs)
 - ✅ Deterministic symbolic execution
 - ✅ Verified rewrites (hallucination-free)
-- ✅ Persistent memory
+- ✅ Persistent memory (JSON storage)
 
-**Run:** `python demo_phase1.py`
+**Run:** `python examples/demo_phase1.py`
 
 ### Phase II: Multi-Step Reasoning
-**File:** `core/cvm_phase2.py`
+**Location:** `cvm/core/cvm_phase2.py`
 
 - ✅ Search-based reasoning (explores transformation space)
 - ✅ Explainable proof chains
 - ✅ Rule induction from experience
 - ✅ Structural pattern learning
+
+**Run:** `python examples/demo_phase2.py`
 
 **Run:** `python demo_phase2.py`
 
