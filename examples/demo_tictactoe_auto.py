@@ -5,7 +5,8 @@ Tic-Tac-Toe Learning Demonstration
 Automated demo showing how the CVM learns to play tic-tac-toe.
 """
 
-from cvm.games.tictactoe import TicTacToeAgent, TicTacToeTrainer, TicTacToeEnvironment, Player
+from cvm.games.tictactoe import TicTacToeEnvironment, Player
+from cvm.agents.tictactoe import TicTacToeAgent, TicTacToeTrainer
 import time
 
 
@@ -42,9 +43,9 @@ def demo_basic_game():
         if done:
             winner = env.winner
             if winner:
-                print(f"✓ {winner.name} WINS!")
+                print(f"[WIN] {winner.name} WINS!")
             else:
-                print("✓ DRAW!")
+                print("[DRAW] DRAW!")
     
     print("Demo 1 complete: Basic game mechanics work correctly.\n")
 
@@ -74,8 +75,8 @@ def demo_learning_progress():
         print(f"    States learned: {stats['states_learned']}")
         print(f"    W/L/D: {stats['wins']}/{stats['losses']}/{stats['draws']}")
         print()
-    
-    print("✓ Learning progress:")
+
+    print("[OK] Learning progress:")
     print(f"  - Started with 0 states")
     print(f"  - Ended with {len(agent.q_table)} states")
     print(f"  - Win rate: {agent.get_win_rate():.1%}")
@@ -120,9 +121,7 @@ def demo_strategy_analysis():
         if count >= 5:
             break
     
-    print("✓ Agent has learned specific position evaluations.\n")
-
-
+    print("[OK] Agent has learned specific position evaluations.\n")
 def demo_trained_vs_untrained():
     """Demo 4: Trained agent vs random player."""
     print_section("DEMO 4: Trained Agent vs Random Player")
@@ -170,11 +169,11 @@ def demo_trained_vs_untrained():
     print(f"    Draws: {random_stats['draws']}")
     print(f"    Win rate: {random_stats['win_rate']:.1%}")
     print()
-    
+
     if trained_stats['win_rate'] > random_stats['win_rate']:
-        print("✓ Trained agent DOMINATES!")
+        print("[OK] Trained agent DOMINATES!")
     else:
-        print("✓ Competitive performance!")
+        print("[OK] Competitive performance!")
     print()
 
 
@@ -221,8 +220,8 @@ def demo_cognitive_integration():
     print(f"  - States learned: {len(agent.q_table)}")
     print(f"  - Win rate: {agent.get_win_rate():.1%}")
     print()
-    
-    print("✓ CVM Phase IV successfully learns tic-tac-toe!")
+
+    print("[OK] CVM Phase IV successfully learns tic-tac-toe!")
     print()
 
 
@@ -246,17 +245,17 @@ def main():
     
     print_section("CONCLUSION")
     print("The CVM successfully learned to play tic-tac-toe through:")
-    print("  ✓ Self-play training")
-    print("  ✓ Q-learning with state abstraction")
-    print("  ✓ Temporal memory integration")
-    print("  ✓ Goal-directed planning")
+    print("  [+] Self-play training")
+    print("  [+] Q-learning with state abstraction")
+    print("  [+] Temporal memory integration")
+    print("  [+] Goal-directed planning")
     print()
     print("Key achievements:")
-    print("  • Learns optimal/near-optimal play in ~500 games")
-    print("  • No human data required - pure self-play")
-    print("  • Explainable decisions via Q-values")
-    print("  • Fast training (~10-20 seconds)")
-    print("  • Memory efficient (<1MB)")
+    print("  - Learns optimal/near-optimal play in ~500 games")
+    print("  - No human data required - pure self-play")
+    print("  - Explainable decisions via Q-values")
+    print("  - Fast training (~10-20 seconds)")
+    print("  - Memory efficient (<1MB)")
     print()
     print(f"Total demo time: {elapsed:.1f}s")
     print()

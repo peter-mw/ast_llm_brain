@@ -6,10 +6,10 @@ import sys
 
 def print_banner():
     print("""
-    ╔═══════════════════════════════════════════════════════════╗
-    ║   AST-Based Cognitive Virtual Machine                     ║
-    ║   A Post-Transformer Architecture                         ║
-    ╚═══════════════════════════════════════════════════════════╝
+    ===================================================================
+       AST-Based Cognitive Virtual Machine                     
+       A Post-Transformer Architecture                         
+    ===================================================================
     """)
 
 

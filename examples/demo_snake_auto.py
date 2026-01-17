@@ -5,7 +5,8 @@ Snake Learning Demonstration
 Automated demo showing how the CVM learns to play Snake.
 """
 
-from cvm.games.snake import SnakeAgent, SnakeTrainer, SnakeEnvironment, Direction
+from cvm.games.snake import SnakeEnvironment, Direction
+from cvm.agents.snake import SnakeAgent, SnakeTrainer
 import time
 
 
@@ -37,11 +38,11 @@ def demo_basic_game():
         print(f"Moving {move.name}:")
         state, reward, done = env.step(move)
         env.render()
-        
+
         if reward > 0:
-            print(f"✓ Food eaten! Reward: +{reward}")
+            print(f"[+] Food eaten! Reward: +{reward}")
         elif reward < 0:
-            print(f"✗ Game over! Penalty: {reward}")
+            print(f"[-] Game over! Penalty: {reward}")
     
     print("Demo 1 complete: Basic game mechanics work correctly.\n")
 
@@ -71,8 +72,8 @@ def demo_learning_progress():
         print(f"    Best score: {stats['best_score']}")
         print(f"    States learned: {stats['states_learned']}")
         print()
-    
-    print("✓ Learning progress:")
+
+    print("[OK] Learning progress:")
     print(f"  - Started with 0 states")
     print(f"  - Ended with {len(agent.q_table)} states")
     print(f"  - Average score: {agent.get_average_score():.2f}")
@@ -113,15 +114,13 @@ def demo_strategy_analysis():
         
         # Show best action
         best_action = max(actions.items(), key=lambda x: x[1])
-        print(f"  → Best move: {best_action[0].name} (Q={best_action[1]:.2f})")
+        print(f"  -> Best move: {best_action[0].name} (Q={best_action[1]:.2f})")
         print()
         
         if count >= 5:
             break
     
-    print("✓ Agent has learned spatial navigation strategies.\n")
-
-
+    print("[OK] Agent has learned spatial navigation strategies.\n")
 def demo_trained_vs_untrained():
     """Demo 4: Compare trained vs untrained performance."""
     print_section("DEMO 4: Trained vs Untrained Agent")
@@ -169,10 +168,10 @@ def demo_trained_vs_untrained():
     print(f"    Best score: {untrained_stats['best_score']}")
     print(f"    Total food eaten: {untrained_stats['total_score']}")
     
-    improvement = (trained_stats['average_score'] / 
+    improvement = (trained_stats['average_score'] /
                    max(untrained_stats['average_score'], 0.1) - 1) * 100
-    
-    print(f"\n✓ Improvement: {improvement:.0f}% better than random!")
+
+    print(f"\n[OK] Improvement: {improvement:.0f}% better than random!")
     print()
 
 
@@ -198,9 +197,9 @@ def demo_cognitive_integration():
     
     print("3. Abstraction Formation")
     print("   - Learns spatial patterns:")
-    print("     • Food direction (8 directions: N, S, E, W, NE, NW, SE, SW)")
-    print("     • Obstacle awareness (4 directions)")
-    print("     • Current direction context")
+    print("     - Food direction (8 directions: N, S, E, W, NE, NW, SE, SW)")
+    print("     - Obstacle awareness (4 directions)")
+    print("     - Current direction context")
     print("   - State space: ~500-800 key patterns")
     print()
     
@@ -221,8 +220,8 @@ def demo_cognitive_integration():
     print(f"  - Average score: {agent.get_average_score():.2f}")
     print(f"  - Best score: {agent.best_score}")
     print()
-    
-    print("✓ CVM Phase IV successfully learns Snake!")
+
+    print("[OK] CVM Phase IV successfully learns Snake!")
     print()
 
 
@@ -264,8 +263,8 @@ def demo_play_sample_game():
     if not state['game_over']:
         print(f"After {step} steps:")
         env.render()
-    
-    print(f"✓ Game finished: Score {state['score']}, Length {len(state['snake'])}")
+
+    print(f"[OK] Game finished: Score {state['score']}, Length {len(state['snake'])}")
     print()
 
 
@@ -290,18 +289,18 @@ def main():
     
     print_section("CONCLUSION")
     print("The CVM successfully learned to play Snake through:")
-    print("  ✓ Self-play training")
-    print("  ✓ Q-learning with spatial abstraction")
-    print("  ✓ Temporal memory integration")
-    print("  ✓ Goal-directed planning")
+    print("  [+] Self-play training")
+    print("  [+] Q-learning with spatial abstraction")
+    print("  [+] Temporal memory integration")
+    print("  [+] Goal-directed planning")
     print()
     print("Key achievements:")
-    print("  • Learns effective strategies in ~500 games")
-    print("  • No human data required - pure self-play")
-    print("  • Spatial reasoning via state abstraction")
-    print("  • 100-300% better than random play")
-    print("  • Fast training (~2-5 seconds)")
-    print("  • Memory efficient (<2MB)")
+    print("  - Learns effective strategies in ~500 games")
+    print("  - No human data required - pure self-play")
+    print("  - Spatial reasoning via state abstraction")
+    print("  - 100-300% better than random play")
+    print("  - Fast training (~2-5 seconds)")
+    print("  - Memory efficient (<2MB)")
     print()
     print(f"Total demo time: {elapsed:.1f}s")
     print()

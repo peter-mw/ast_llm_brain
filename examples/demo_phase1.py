@@ -44,7 +44,7 @@ def main():
     print(f"Output: {decompile(result)}")
     print()
     
-    print("✓ Phase I demonstrates:")
+    print("[OK] Phase I demonstrates:")
     print("  - Executable AST representation")
     print("  - Deterministic symbolic execution")
     print("  - Verified rewrites (no hallucination)")

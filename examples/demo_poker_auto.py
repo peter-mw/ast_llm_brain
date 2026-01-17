@@ -2,7 +2,8 @@
 Poker Learning Demo - Automated Version
 Demonstrates CVM learning to play Texas Hold'em through self-play
 """
-from cvm.games.poker import PokerAgent, PokerTrainer
+from cvm.games.poker import PokerEnvironment
+from cvm.agents.poker import PokerAgent, PokerTrainer
 
 
 def print_banner():
@@ -14,7 +15,7 @@ def print_banner():
 
 def demo_basic_game():
     """Show a basic poker game"""
-    print("🎴 DEMO 1: Basic Poker Game")
+    print("[POKER] DEMO 1: Basic Poker Game")
     print("-" * 70)
     print()
     
@@ -36,7 +37,7 @@ def demo_basic_game():
 
 def demo_learning_progress():
     """Show learning over time"""
-    print("🧠 DEMO 2: Learning Through Self-Play")
+    print("[BRAIN] DEMO 2: Learning Through Self-Play")
     print("-" * 70)
     print()
     
@@ -72,7 +73,7 @@ def demo_learning_progress():
 
 def demo_strategy_analysis(agent):
     """Analyze learned strategy"""
-    print("📊 DEMO 3: Strategy Analysis")
+    print("[STATS] DEMO 3: Strategy Analysis")
     print("-" * 70)
     print()
     
@@ -121,7 +122,7 @@ def demo_strategy_analysis(agent):
         if actions:  # Only show if has actions
             best_action = max(actions.items(), key=lambda x: x[1])
             print(f"    Situation: ...{state_key[-50:]}")
-            print(f"      → Best action: {best_action[0]} (value: {best_action[1]:.2f})")
+            print(f"      -> Best action: {best_action[0]} (value: {best_action[1]:.2f})")
             count += 1
     
     print()
@@ -134,7 +135,7 @@ def demo_strategy_analysis(agent):
 
 def demo_agent_competition():
     """Pit trained agent against untrained"""
-    print("⚔️  DEMO 4: Trained vs Untrained")
+    print("[VS] DEMO 4: Trained vs Untrained")
     print("-" * 70)
     print()
     
@@ -146,8 +147,8 @@ def demo_agent_competition():
     print("Training first agent for 500 hands...")
     trainer = PokerTrainer()
     trainer.train(trained, PokerAgent("PracticeBot"), num_hands=500, verbose=False)
-    
-    print(f"✓ Training complete. Win rate: {trained.get_win_rate():.1%}")
+
+    print(f"[OK] Training complete. Win rate: {trained.get_win_rate():.1%}")
     print()
     
     # Now pit them against each other
@@ -171,15 +172,15 @@ def demo_agent_competition():
     print()
     
     if competition_results['agent1_wins'] > competition_results['agent2_wins']:
-        print("  ✓ Trained agent DOMINATES untrained opponent!")
+        print("  [OK] Trained agent DOMINATES untrained opponent!")
     else:
-        print("  ≈ Results show learning in progress...")
+        print("  [~] Results show learning in progress...")
     print()
 
 
 def demo_cognitive_insights():
     """Show CVM cognitive features during poker"""
-    print("🧬 DEMO 5: Cognitive Architecture in Action")
+    print("[CVM] DEMO 5: Cognitive Architecture in Action")
     print("-" * 70)
     print()
     
@@ -187,10 +188,10 @@ def demo_cognitive_insights():
     
     print("The CVM poker agent uses Phase IV features:")
     print()
-    print("  ✓ Temporal Memory - Recent hands influence strategy")
-    print("  ✓ Goal-Directed Planning - Maximize chip EV")
-    print("  ✓ Abstraction Formation - Learns hand categories")
-    print("  ✓ Meta-Reasoning - Reflects on strategy success")
+    print("  [+] Temporal Memory - Recent hands influence strategy")
+    print("  [+] Goal-Directed Planning - Maximize chip EV")
+    print("  [+] Abstraction Formation - Learns hand categories")
+    print("  [+] Meta-Reasoning - Reflects on strategy success")
     print()
     
     print("Training and observing cognitive processes...")
@@ -217,10 +218,10 @@ def main():
     
     print("This demonstration shows the CVM learning poker through self-play.")
     print("The cognitive architecture enables the agent to:")
-    print("  • Learn from experience (temporal memory)")
-    print("  • Develop strategy (abstraction formation)")
-    print("  • Improve over time (meta-reasoning)")
-    print("  • Make goal-directed decisions (planning)")
+    print("  - Learn from experience (temporal memory)")
+    print("  - Develop strategy (abstraction formation)")
+    print("  - Improve over time (meta-reasoning)")
+    print("  - Make goal-directed decisions (planning)")
     print()
     print()
     
@@ -243,8 +244,8 @@ def main():
     print("CONCLUSION")
     print("=" * 70)
     print()
-    print("✓ The CVM successfully taught itself poker through self-play")
-    print("✓ Learning emerged from Phase IV cognitive architecture:")
+    print("[OK] The CVM successfully taught itself poker through self-play")
+    print("[OK] Learning emerged from Phase IV cognitive architecture:")
     print("    - Goal-directed behavior (maximize chips)")
     print("    - Temporal memory (recent hand outcomes)")
     print("    - Abstraction formation (hand categories)")
@@ -253,7 +254,7 @@ def main():
     print("This demonstrates the power of executable, verifiable cognition")
     print("for complex strategic learning tasks.")
     print()
-    print("🎴 The CVM is now a poker player. 🧠")
+    print("[POKER] The CVM is now a poker player.")
     print("=" * 70)
 
 

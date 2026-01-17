@@ -2,15 +2,14 @@
 Poker Game Module
 =================
 
-Texas Hold'em poker implementation with learning agents.
+Texas Hold'em poker implementation.
 
 Classes:
     PokerEnvironment: Game environment
-    PokerAgent: Learning agent
-    PokerTrainer: Self-play trainer
+
+Note: PokerAgent and PokerTrainer are in cvm.agents.poker
 """
 
 from cvm.games.poker.game import PokerEnvironment
-from cvm.games.poker.agent import PokerAgent, PokerTrainer
 
-__all__ = ["PokerEnvironment", "PokerAgent", "PokerTrainer"]
+__all__ = ["PokerEnvironment"]

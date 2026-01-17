@@ -82,7 +82,7 @@ def main():
         print(f"  {i}. {rule}")
     print()
     
-    print("✓ Phase III demonstrates:")
+    print("[OK] Phase III demonstrates:")
     print("  - Lossless reversible thought encoding")
     print("  - Visual/numeric memory substrate")
     print("  - Neural compression of cognitive state")

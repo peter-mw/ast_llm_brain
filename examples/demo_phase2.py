@@ -53,7 +53,7 @@ def main():
     print(f"Learned Rule: {rule}")
     print()
     
-    print("✓ Phase II demonstrates:")
+    print("[OK] Phase II demonstrates:")
     print("  - Multi-step search-based reasoning")
     print("  - Explainable proof chains")
     print("  - Rule induction from experience")

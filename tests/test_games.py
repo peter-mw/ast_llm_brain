@@ -13,7 +13,8 @@ class TestPoker:
     
     def test_poker_imports(self):
         """Test poker modules can be imported."""
-        from cvm.games.poker import PokerEnvironment, PokerAgent, PokerTrainer
+        from cvm.games.poker import PokerEnvironment
+        from cvm.agents.poker import PokerAgent, PokerTrainer
         
         assert PokerEnvironment is not None
         assert PokerAgent is not None
@@ -35,7 +36,8 @@ class TestSnake:
     
     def test_snake_imports(self):
         """Test snake modules can be imported."""
-        from cvm.games.snake import SnakeEnvironment, SnakeAgent, SnakeTrainer, Direction
+        from cvm.games.snake import SnakeEnvironment, Direction
+        from cvm.agents.snake import SnakeAgent, SnakeTrainer
         
         assert SnakeEnvironment is not None
         assert SnakeAgent is not None
@@ -61,10 +63,9 @@ class TestTicTacToe:
         """Test tic-tac-toe modules can be imported."""
         from cvm.games.tictactoe import (
             TicTacToeEnvironment,
-            TicTacToeAgent,
-            TicTacToeTrainer,
             Player,
         )
+        from cvm.agents.tictactoe import TicTacToeAgent, TicTacToeTrainer
         
         assert TicTacToeEnvironment is not None
         assert TicTacToeAgent is not None

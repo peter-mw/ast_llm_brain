@@ -134,10 +134,10 @@ def main():
     print("Discovered Abstractions:")
     for pattern, count in abstractions[:5]:
         print(f"  {pattern} (frequency: {count})")
-    
+
     print()
-    
-    print("✓ Phase IV demonstrates:")
+
+    print("[OK] Phase IV demonstrates:")
     print("  - Autonomous goal-directed planning")
     print("  - Environment interaction loop")
     print("  - Reinforcement and temporal decay")

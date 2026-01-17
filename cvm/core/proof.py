@@ -19,7 +19,7 @@ class Proof:
             from cvm.core.compiler import decompile
             print(f"Step {i}: {decompile(step)}")
             if i < len(self.steps) - 1:
-                print("    ↓")
+                print("    |")
         print("===================\n")
     
     def __len__(self):

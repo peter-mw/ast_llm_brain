@@ -2,16 +2,15 @@
 Snake Game Module
 =================
 
-Classic Snake game implementation with learning agents.
+Classic Snake game implementation.
 
 Classes:
     SnakeEnvironment: Game environment
-    SnakeAgent: Learning agent with spatial reasoning
-    SnakeTrainer: Self-play trainer
     Direction: Movement directions enum
+
+Note: SnakeAgent and SnakeTrainer are in cvm.agents.snake
 """
 
 from cvm.games.snake.game import SnakeEnvironment, Direction
-from cvm.games.snake.agent import SnakeAgent, SnakeTrainer
 
-__all__ = ["SnakeEnvironment", "Direction", "SnakeAgent", "SnakeTrainer"]
+__all__ = ["SnakeEnvironment", "Direction"]
