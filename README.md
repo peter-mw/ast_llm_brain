@@ -451,7 +451,7 @@ If you build on this work:
 ```
 AST-Based Cognitive Virtual Machine
 A post-transformer architecture for deterministic, verifiable AI
-https://github.com/yourusername/ast_llm_brain
+https://github.com/peter-mw/ast_llm_brain
 ```
 
 ---
