@@ -25,6 +25,7 @@ def main():
         print("  phase4  - Autonomous cognition")
         print("  poker   - Learn to play poker (self-play)")
         print("  tictactoe - Learn to play tic-tac-toe (self-play)")
+        print("  snake   - Learn to play Snake (self-play)")
         print("  all     - Run all phases sequentially")
         print("\nExample: python main.py phase1")
         print("Example: python main.py poker")
@@ -54,6 +55,10 @@ def main():
     
     elif phase == "tictactoe":
         from demo_tictactoe_auto import main as demo
+        demo()
+    
+    elif phase == "snake":
+        from demo_snake_auto import main as demo
         demo()
     
     elif phase == "all":
