@@ -1,0 +1,10 @@
+# AST-based Cognitive Virtual Machine
+# Requirements file
+
+# Core dependencies (optional but recommended)
+numpy>=1.20.0        # For embeddings and visual memory
+pillow>=8.0.0        # For visual memory image export
+
+# Development dependencies (optional)
+# pytest>=6.0.0      # For testing
+# black>=21.0        # For code formatting
